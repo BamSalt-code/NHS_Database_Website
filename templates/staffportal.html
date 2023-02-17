@@ -1,0 +1,342 @@
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+    *{
+       margin: 0;
+       padding: 0;
+       outline: none;
+       border: none;
+       text-decoration: none;
+       box-sizing: border-box;
+       font-family: "Poppins", sans-serif;
+    }
+    body{
+       background: #dfe9f5;
+    }
+    .container{
+      display: flex;
+    }
+    nav{
+      position: relative;
+      top: 0;
+      bottom: 0;
+      height: 100vh;
+      left: 0;
+      background: #fff;
+      width: 280px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    }
+    hor
+    .logo{
+      text-align: center;
+      display: flex;
+      margin: 10px 00 10px;
+    }
+    .logo img{
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+    .logo span{
+      font-weight: bold;
+      padding-left: 15px;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    a{
+      position: relative;
+      color: rgb(85, 83, 83);
+      font-size: 14px;
+      display: table;
+      width: 280px;
+      padding: 10px;
+    }
+    nav .fas{
+       position: relative;
+       width: 70px;
+       height: 40px;
+       top: 14px;
+       font-size: 20px;
+       text-align: center;
+    }
+    .nav-item{
+       position: relative;
+       top: 12px;
+       margin-left: 10px;
+    }
+    a:hover{
+       background: #eee;
+    }
+    .logout{
+       position: absolute;
+       bottom: 0;
+    }
+    .main{
+       position: relative;
+       padding: 20px;
+       width: 100%;
+    }
+    .main-top{
+       display: flex;
+       width: 100px;
+    }
+    .main-top i{
+       position: absolute;
+       right: 0;
+       margin: 10px 30px;
+       color: rgb(11, 109, 109);
+       cursor: pointer;
+    }
+    .main-skills{
+       display: flex;
+       margin-top: 20px;
+    }
+    .main-skills .card{
+       width: 50%;
+       margin: 10px;
+       background: #fff;
+       text-align: center;
+       border-radius: 20px;
+       padding: 10px;
+       box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    }
+    .main-skills .card h3{
+       margin: 8px;
+       text-transform: capitalize;
+    }
+    .main-skills .card p{
+       font-size: 12px;
+    }
+    .main-skills .card button{
+       background: orangered;
+       color: #fff;
+       padding: 7px 15px;
+       border-radius: 10px;
+       margin-top: 15px;
+       cursor: pointer;
+    }
+    .main-skills .card button:hover{
+       background: rgba(233, 70, 15, 0.856);
+    }
+    .main-skills .card i{
+       font-size: 22px;
+       padding: 10px;
+    }
+    .main-skills .card img{
+       float: left;
+       width:  100px;
+       height: 100px;
+       object-fit:: cover;
+    }
+    .main-course{
+       margin-top: 20px;
+       text-transform: capitalize;
+    }
+    .course-box{
+       display: inline-flex;
+       padding: 10px;
+       margin-top: 10px;
+       background: #fff;
+       border-radius: 10px;
+       box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    }
+    .course-box ul{
+       list-style: none;
+       display: flex;
+    }
+    .course-box ul li{
+       margin: 10px;
+       color: gray
+       cursor: pointer;
+    }
+    .course-box ul .active{
+       color: #000;
+       border-bottom: 1px solid #000;
+    }
+    .course-box .course{
+       display: flex;
+    }
+    .box{
+       width: 33%;
+       padding 10px;
+       margin: 10px;
+       border-radius: 10px;
+       background: rgb(235, 233, 233);
+       box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    }
+    .box p{
+       font-size: 12px;
+       margin-top: 5px;
+    }
+    .box button{
+       background: #000;
+       color: #fff;
+       padding: 7px 10px;
+       border-radius: 10px;
+       margin-top: 3rem;
+       cursor: pointer;
+    }
+    .box button:hover{
+       background: rgba(0, 0, 0, 0.842);
+    }
+    .box i{
+      font-size: 7rem;
+      float: right;
+      margin: -20px 20px 20px 0;
+    }
+    .table-sortable{
+
+    }
+    td {
+      padding: 0 20px;
+    }
+    tr:hover {
+      background-color: #dfe9f5;
+    }
+    .table-sortable th{
+      cursor: pointer;
+    }
+    .table-sortable .th-sort-asc::after{
+      content: "\25b4";
+    }
+    .table-sortable .th-sort-desc::after{
+      content: "\25be";
+    }
+    .table-sortable .th-sort-asc::after,
+    .table-sortable .th-sort-desc::after{
+      margin-left: 5px;
+    }
+
+</style>
+</head>
+<body>
+ <div class="container">
+   <nav>
+      <ul>
+        <li><a href="#" class="logo">
+           <img src=data:image/png;base64,{{current_user.profile_pic}} alt="Your Profile Picture">
+           <span class="nav-item">Dashboard</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fas fa-home"></i>
+            <span class="nav-item">Home</span>
+        </a></li>
+        <li><a href="#">
+             <i class="fas fa-user"></i>
+            <span class="nav-item">Profile</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fas fa-wallet"></i>
+            <span class="nav-item">Wallet</span>
+        </a></li>
+        <li><a href="#">
+             <i class="fas fa-chart-bar"></i>
+            <span class="nav-item">Analytics</span>
+        </a></li>
+        <li><a href="#">
+             <i class="fas fa-tasks"></i>
+            <span class="nav-item">Tasks</span>
+        </a></li>
+        <li><a href="#">
+             <i class="fas fa-cog"></i>
+            <span class="nav-item">Settings</span>
+        </a></li>
+        <li><a href="#">
+             <i class="fas fa-question-circle"></i>
+            <span class="nav-item">Help</span>
+        </a></li>
+        <li><a href="#" class="logout">
+             <i class="fas fa-sign-out-alt"></i>
+            <span class="nav-item">Sign Out</span>
+        </a></li>
+      </ul>
+   </nav>
+   <section class="main">
+       <div class="main-top">
+           <h1>Your Profile</h1>
+           <i class="fas fa-user-cog"></i>
+       </div>
+       <div class="main-skills">
+           <div class="card">
+             <img src=data:image/png;base64,{{current_user.profile_pic}} alt="Your Profile Picture">
+             <H3>{{current_user.first_name}} {{current_user.last_name}}</H3>
+             <p>Role: {{current_user.staff_role}}</p>
+             <p>E-Mail:  {{current_user.email}}</p>
+             <p>Assigned Ward: {{current_user.assigned_ward}}</p>
+<!--             <button>susi baki</button>-->
+           </div>
+       </div>
+       <section class="main-course">
+               <h1>My Patients</h1>
+               <div class="course-box">
+                   <table class="table table-sortable">
+                       <thead>
+                         <tr>
+                             <th>Patient ID</th>
+                             <th>First Name</th>
+                             <th>Last Name</th>
+                             <th>Address</th>
+                             <th>Date of Birth</th>
+                             <th>Registration Date</th>
+                             <th>Assigned Ward</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         {% for patient in patients %}
+                           <tr>
+                              <td>{{ patient.patient_id }}</td>
+                              <td>{{ patient.first_name }}</td>
+                              <td>{{ patient.last_name }}</td>
+                              <td>{{ patient.address }}</td>
+                              <td>{{ patient.DOB }}</td>
+                              <td>{{ patient.registered_at }}</td>
+                              <td>{{ patient.assigned_ward }}</td>
+                           </tr>
+                         {% endfor %}
+                       </tbody>
+                   </table>
+               </div>
+           </section>
+   </section>
+ </div>
+</body>
+<script>
+    function SortPatientInfo(table, column, asc = true) {
+        const direction_modifier = asc ? 1 : -1;
+        const table_body = table.tBodies[0];
+        const table_rows = Array.from(table_body.querySelectorAll("tr"));
+
+        const sorted_rows = table_rows.sort((a, b) => {
+               const col_A_text = a.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
+               const col_B_text = b.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
+               console.log(col_A_text);
+               console.log(col_B_text);
+               return col_A_text > col_B_text ? (1 * direction_modifier) : (-1 * direction_modifier);
+        });
+
+        while (table_body.firstChild) {
+            table_body.removeChild(table_body.firstChild);
+        }
+
+        table_body.append(...sorted_rows);
+
+        // clears all stored classes, then adds asc if ascending then desc if descending
+        table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));
+        table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-asc", asc);
+        table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-desc", !asc);
+    }
+
+    document.querySelectorAll(".table-sortable th").forEach(headerCell => {
+           headerCell.addEventListener("click", () =>{
+                // gets the table itself
+                const table = headerCell.parentElement.parentElement.parentElement;
+                // finds out which header was clicked
+                const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
+                const currentIsAscending = headerCell.classList.contains("th-sort-asc");
+
+                SortPatientInfo(table, headerIndex, !currentIsAscending);
+           });
+    });
+</script>

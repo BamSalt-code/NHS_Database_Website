@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<head>
+<title>Memory Board Homepage</title>
+<link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img.png')}}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+    /* Styling the area of the slides */
+
+    #slideshow {
+        overflow: hidden;
+        height: 510px;
+        width: 728px;
+        margin: 0 auto;
+    }
+
+    /* Style each of the sides
+    with a fixed width and height */
+
+    .slide {
+        float: left;
+        height: 510px;
+        width: 728px;
+    }
+
+    /* Add animation to the slides */
+
+    .slide-wrapper {
+
+        /* Calculate the total width on the
+      basis of number of slides */
+        width: calc(728px * 4);
+
+        /* Specify the animation with the
+      duration and speed */
+        animation: slide 30s ease infinite;
+    }
+
+    /* Set the background color
+    of each of the slides */
+
+    .slide:nth-child(1) {
+        background: black;
+    }
+
+    .slide:nth-child(2) {
+        background: black;
+    }
+
+    .slide:nth-child(3) {
+        background: black;
+    }
+
+    .slide:nth-child(4) {
+        background: yellow;
+    }
+
+     .slide:nth-child(5) {
+        background: yellow;
+    }
+
+
+    /* Define the animation
+    for the slideshow */
+
+    @keyframes slide {
+
+        /* Calculate the margin-left for
+      each of the slides */
+        20% {
+            margin-left: 0px;
+        }
+        40% {
+            margin-left: calc(-728px * 1);
+        }
+        60% {
+            margin-left: calc(-728px * 2);
+        }
+        80% {
+            margin-left: calc(-728px * 3);
+        }
+
+      .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+    }
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- top menu bar   <br> new line tags <br> -->
+
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+<!--    <a class="w3-bar-item"><img src="{{url_for('static', filename='busilogo.png')}}" alt="logo" style = "width:50px;height:50px/">-->
+    <a class="w3-bar-item w3-button" style="font-family:;"><b>Memory Board</b></a>
+    </a>
+    <div class="w3-right w3-hide-small">
+      <a href='http://127.0.0.1:5000/portfolio' class="w3-bar-item w3-button"> About Us</a>
+      <a onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">Log In</a>
+    </div>
+  </div>
+</div>
+<br>
+<!--<div id="slideshow">-->
+<!--        <div class="slide-wrapper">-->
+
+<!--            &lt;!&ndash; Define each of the slides-->
+<!--         and write the content &ndash;&gt;-->
+<!--            <div class="slide">-->
+<!--                <img src="{{url_for('static', filename='img_3.png')}}" width="728" height="440">-->
+<!--                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<!--                <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Organise Your Responsibilities</b></span></h1>-->
+<!--            </div>-->
+<!--            <div class="slide">-->
+<!--                <img src="{{url_for('static', filename='img_1.png')}}" width="728" height="440">-->
+<!--                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<!--                <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Prepare Study Plans Ahead</b></span></h1>-->
+<!--            </div>-->
+<!--            <div class="slide">-->
+<!--                <img src="{{url_for('static', filename='hydra.jpg')}}" width="728" height="440">-->
+<!--                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<!--                 <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Take Control Of Life</b></span></h1>-->
+<!--            </div>-->
+
+<!--            <div class="slide">-->
+<!--                <h1 class="slide-number">-->
+<!--                    Slideshow placeholder-->
+<!--                </h1>-->
+<!--            </div>-->
+<!--             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
+<!--  <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+<!--        </div>-->
+    </div>
+
+
+
+<div id="id01" class="modal">
+
+  <form class="modal-content animate"  method="POST">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h1>Log In</h1>
+    </div>
+
+    <div class="container">
+
+      <input type="text" placeholder="Enter Email" name="email" id= 'email' required>
+<!--      <input type="text" placeholder="Enter First Name" name="fname" id= 'fname' required>-->
+<!--      <input type="text" placeholder="Enter Last Name" name="lname" id= 'lname' required>-->
+      <input type="password" placeholder="Enter Password" name="password" id= 'password' required>
+
+        <div>
+        <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+<!--      <div>-->
+<!--        <section>-->
+<!--            {% for message in get_flashed_messages()%}-->
+<!--            <div>-->
+<!--              {{ message }}-->
+<!--          </div>-->
+<!--            {% endfor%}-->
+<!--        </section>-->
+<!--       <div>-->
+       <div>
+           <p><a href = "{{url_for('register') }}">Register Here</a></p>
+      <button type="submit">Login</button>
+    </div>
+
+<!--    <div class="container" style="background-color:#f1f1f1">-->
+<!--      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>-->
+<!--      <span class="psw">Forgot <a href="#">password?</a></span>-->
+<!--    </div>-->
+
+</div>
+
+<script>
+
+var modal = document.getElementById('id01');
+
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+<!--<footer class="w3-padding-32 w3-black w3-center w3-margin-top"></footer>-->

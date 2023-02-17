@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+<title>Memory Board Homepage</title>
+<link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img.png')}}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<!-- top menu bar   <br> new line tags <br> -->
+
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+<!--    <a class="w3-bar-item"><img src="{{url_for('static', filename='busilogo.png')}}" alt="logo" style = "width:50px;height:50px/">-->
+    <a class="w3-bar-item w3-button" style="font-family:;"><b>Memory Board</b></a>
+    </a>
+    <div class="w3-right w3-hide-small">
+      <a href='http://127.0.0.1:5000/portfolio' class="w3-bar-item w3-button"> About Us</a>
+      {% if current_user.staff_role == "Admin" %}
+         <a href='http://127.0.0.1:5000/portfolio' class="w3-bar-item w3-button">Admin Portal</a>
+      {% endif %}
+      <a onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">Logged In as {{ current_user.first_name }}</a>
+    </div>
+  </div>
+  <img src=data:image/png;base64,{{current_user.profile_pic}} alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+  <p>{{current_user.first_name}} {{current_user.last_name}}</p>
+  <table>
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>First Name</th>
+    <th>E-Mail</th>
+    <th>Staff Role</th>
+    <th>Assigned Ward</th>
+  </tr>
+  {% for user in data %}
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.staff_role }}</td>
+      <td>{{ user.assigned_ward }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+
+  <table>
+  <tr>
+    <th>Patient ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Address</th>
+    <th>Date of Birth</th>
+    <th>Registration Date</th>
+    <th>Assigned Ward</th>
+  </tr>
+  {% for patient in patients %}
+    <tr>
+      <td>{{ patient.patient_id }}</td>
+      <td>{{ patient.first_name }}</td>
+      <td>{{ patient.last_name }}</td>
+      <td>{{ patient.address }}</td>
+      <td>{{ patient.DOB }}</td>
+      <td>{{ patient.registered_at }}</td>
+      <td>{{ patient.assigned_ward }}</td>
+    </tr>
+  {% endfor %}
+  </table>
